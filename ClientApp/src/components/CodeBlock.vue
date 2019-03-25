@@ -20,14 +20,9 @@ export default {
     lang: {
       type: String,
       required: false,
-      default: 'text/x-vue',
+      default: 'text/x-csharp',
     },
-    scriptOnly: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    templateOnly: {
+    classOnly: {
       type: Boolean,
       required: false,
       default: false,
@@ -35,15 +30,11 @@ export default {
   },
   computed: {
     filteredCode() {
-      if (this.scriptOnly) {
-        const matches = /<script>((?:.|\n|\r)*)<\/script>/gm.exec(this.code);
-        return matches ? matches[1].trim() : this.code;
+      if (this.classOnly) {
+        const matches = /namespace [a-zA-Z\.]+\s\{((?:.|\n|\r)*)\}/gm.exec(this.code);
+        return matches ? matches[1].trim() : this.code.trim();
       }
-      if (this.templateOnly) {
-        const matches = /<template>((?:.|\n|\r)*)<\/template>/gm.exec(this.code);
-        return matches ? matches[1].trim() : this.code;
-      }
-      return this.code;
+      return this.code.trim();
     },
   },
 };

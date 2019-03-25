@@ -37,6 +37,9 @@ export default {
     // Invoke method and get return value
     this.viewers = await this.hub.invoke('Join');
   },
+  async beforeDestroy() {
+    await this.hub.stop();
+  },
 };
 </script>
 
