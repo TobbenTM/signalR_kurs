@@ -19,6 +19,7 @@
           <li>SignalR hubs</li>
           <li>SignalR clients &amp; groups</li>
           <li>Streaming data</li>
+          <li>Connection lifecycle</li>
           <h4>Hands-on workshop</h4>
           <li>Vi bygger en egen liten SignalR app!</li>
         </ul>
@@ -135,9 +136,21 @@
       </app-slide>
 
       <app-slide>
-        <h1>SignalR hubs</h1>
+        <h1>SignalR hubs med DI</h1>
         <code-block :code="examples.DbContextHub"/>
         <p>DbContextHub.cs</p>
+      </app-slide>
+
+      <app-slide>
+        <h1>SignalR hubs med sterkt typet klient</h1>
+        <div class="half">
+          <code-block :code="examples.TypedHub"/>
+          <p>TypedHub.cs</p>
+        </div>
+        <div class="half">
+          <code-block :code="examples.ITypedClient"/>
+          <p>ITypedClient.cs</p>
+        </div>
       </app-slide>
 
       <app-slide>
@@ -163,6 +176,8 @@ import HubMapping from '!!raw-loader!./examples/HubMapping.cs';
 import PingPongHub from '!!raw-loader!hubs/PingPongHub.cs';
 import PingPongClient from '!!raw-loader!./examples/PingPongHubClient.js';
 import DbContextHub from '!!raw-loader!./examples/DbContextHub.cs';
+import TypedHub from '!!raw-loader!./examples/TypedHub.cs';
+import ITypedClient from '!!raw-loader!./examples/ITypedClient.cs';
 
 Vue.component('app-presenter', AppPresenter);
 
@@ -182,6 +197,8 @@ export default {
         PingPongHub,
         PingPongClient,
         DbContextHub,
+        TypedHub,
+        ITypedClient,
       }
     };
   },
