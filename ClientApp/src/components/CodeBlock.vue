@@ -31,6 +31,7 @@ export default {
   computed: {
     filteredCode() {
       if (this.classOnly) {
+        // eslint-disable-next-line
         const matches = /namespace [a-zA-Z\.]+\s\{((?:.|\n|\r)*)\}/gm.exec(this.code);
         return matches ? matches[1].trim() : this.code.trim();
       }
