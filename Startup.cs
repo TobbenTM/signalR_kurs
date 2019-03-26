@@ -48,6 +48,7 @@ namespace signalR
 
             app.UseSignalR(conf =>
             {
+                conf.MapHub<ChatHub>("/chat");
                 conf.MapHub<ViewerHub>("/viewers");
                 conf.MapHub<PingPongHub>("/pingpong");
                 conf.MapHub<ExceptionHub>("/exceptions");
