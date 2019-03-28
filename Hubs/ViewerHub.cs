@@ -16,7 +16,10 @@ namespace signalR.Hubs
             _state = state;
             _logger = logger;
         }
-
+        public override Task OnConnectedAsync()
+        {
+            return base.OnConnectedAsync();
+        }
         public override async Task OnDisconnectedAsync(Exception exception)
         {
             _logger.LogInformation($"Viewer left! Connection id: {Context.ConnectionId}");

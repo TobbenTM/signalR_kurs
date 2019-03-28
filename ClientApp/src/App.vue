@@ -142,6 +142,12 @@
       </app-slide>
 
       <app-slide>
+        <h1>SignalR hubs fra DI</h1>
+        <code-block :code="examples.OutsideInvokation"/>
+        <p>OutsideInvokation.cs</p>
+      </app-slide>
+
+      <app-slide>
         <h1>SignalR hubs med sterkt typet klient</h1>
         <div class="half">
           <code-block :code="examples.TypedHub"/>
@@ -154,12 +160,26 @@
       </app-slide>
 
       <app-slide>
+        <h1>Clients &amp; groups</h1>
+      </app-slide>
+
+      <app-slide>
+        <h1>Streaming data</h1>
+      </app-slide>
+
+      <app-slide>
+        <h1>Connection lifecycle</h1>
+        <code-block :code="examples.LifecycleHub"/>
+        <p>LifecycleHub.cs</p>
+      </app-slide>
+
+      <app-slide>
         <h1>Workshop</h1>
         <chat-box/>
       </app-slide>
 
       <app-slide>
-        <img src="./assets/power_of_sharing.png" />
+        <img src="./assets/power_of_sharing.png" style="position: absolute;" />
       </app-slide>
 
     </app-presenter>
@@ -182,8 +202,10 @@ import HubMapping from '!!raw-loader!./examples/HubMapping.cs';
 import PingPongHub from '!!raw-loader!hubs/PingPongHub.cs';
 import PingPongClient from '!!raw-loader!./examples/PingPongHubClient.js';
 import DbContextHub from '!!raw-loader!./examples/DbContextHub.cs';
+import OutsideInvokation from '!!raw-loader!./examples/OutsideInvokation.cs';
 import TypedHub from '!!raw-loader!./examples/TypedHub.cs';
 import ITypedClient from '!!raw-loader!./examples/ITypedClient.cs';
+import LifecycleHub from '!!raw-loader!./examples/LifecycleHub.cs';
 
 Vue.component('app-presenter', AppPresenter);
 
@@ -204,8 +226,10 @@ export default {
         PingPongHub,
         PingPongClient,
         DbContextHub,
+        OutsideInvokation,
         TypedHub,
         ITypedClient,
+        LifecycleHub,
       }
     };
   },
