@@ -3,7 +3,7 @@
     <app-presenter v-on:progress="progress = $event">
 
       <app-slide>
-        <img src="./assets/swimlane-signalr-hub.svg" style="min-width: 25em;"/>
+        <img src="./assets/swimlane-signalr-hub.svg" style="width: 25em;"/>
         <h1 class="signalr-title">SignalR</h1>
         <h4>Introduksjonskurs og workshop</h4>
         <a href="http://signalr.nærd.no" style="width: 100%;">signalr.nærd.no</a>
@@ -154,6 +154,11 @@
       </app-slide>
 
       <app-slide>
+        <h1>Workshop</h1>
+        <chat-box/>
+      </app-slide>
+
+      <app-slide>
         <img src="./assets/power_of_sharing.png" />
       </app-slide>
 
@@ -171,6 +176,7 @@ import AppProgress from './components/AppProgress';
 import AppViewers from './components/AppViewers';
 import AppSlide from './components/AppSlide';
 import CodeBlock from './components/CodeBlock';
+import ChatBox from './components/ChatBox';
 
 import HubMapping from '!!raw-loader!./examples/HubMapping.cs';
 import PingPongHub from '!!raw-loader!hubs/PingPongHub.cs';
@@ -188,6 +194,7 @@ export default {
     AppProgress,
     AppViewers,
     CodeBlock,
+    ChatBox,
   },
   data() {
     return {
