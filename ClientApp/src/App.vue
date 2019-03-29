@@ -15,9 +15,9 @@
         <ul>
           <h4>Intro til SIgnalR</h4>
           <li>Hva er SignalR?</li>
-          <li>SignalR transports</li>
-          <li>SignalR hubs</li>
-          <li>SignalR clients &amp; groups</li>
+          <li>Transports</li>
+          <li>Hubs</li>
+          <li>Clients &amp; groups</li>
           <li>Streaming data</li>
           <li>Connection lifecycle</li>
           <h4>Hands-on workshop</h4>
