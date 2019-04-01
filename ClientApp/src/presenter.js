@@ -84,7 +84,7 @@ export default {
       this.emitProgress();
     },
     emitProgress() {
-      this.$emit('progress', (this.currentIndex + 1) * 100 / this.maxSlides);
+      this.$emit('progress', (this.currentIndex) * 100 / (this.maxSlides - 1));
     },
   },
 };

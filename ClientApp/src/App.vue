@@ -18,7 +18,7 @@
           <li>Transports</li>
           <li>Hubs</li>
           <li>Clients &amp; groups</li>
-          <li>Streaming data</li>
+          <!-- <li>Streaming data</li> -->
           <li>Connection lifecycle</li>
           <h4>Hands-on workshop</h4>
           <li>Vi bygger en egen liten SignalR app!</li>
@@ -41,6 +41,27 @@
           <li>Innebygd støtte for horisontal skalering</li>
           <li>Automatisk nedgradering til eldre protokoller</li>
         </ul>
+      </app-slide>
+
+      <app-slide>
+        <h1>Eksempel: Grafana</h1>
+        <h4 class="hint no-margin">(Prototype)</h4>
+        <img src="./assets/grafana.gif" class="half"/>
+        <ul>
+          <li>Bruker websocket streaming</li>
+          <li>Bidrar til langt mindre last på backenden</li>
+          <li>Umiddelbar feedback på endringer</li>
+        </ul>
+      </app-slide>
+
+      <app-slide>
+        <h1>Eksempel: Office 365</h1>
+        <ul>
+          <li>Bruker SignalR!</li>
+          <li>Kryss-plattform SignalR både i native apps og på web</li>
+          <li>Muliggjør realtime samhandling</li>
+        </ul>
+        <img src="./assets/office365.png" class="half"/>
       </app-slide>
 
       <app-slide>
@@ -161,11 +182,15 @@
 
       <app-slide>
         <h1>Clients &amp; groups</h1>
+        <code-block :code="examples.ClientGroupHub"/>
+        <p>ClientGroupHub.cs</p>
       </app-slide>
 
+<!--
       <app-slide>
         <h1>Streaming data</h1>
       </app-slide>
+-->
 
       <app-slide>
         <h1>Connection lifecycle</h1>
@@ -175,7 +200,26 @@
 
       <app-slide>
         <h1>Workshop</h1>
-        <chat-box/>
+        <!-- <chat-box/> -->
+        <ol>
+          <li>Klon repo: <a href="https://github.com/tobbentm/signalR_starter">github.com/tobbentm/signalR_starter</a></li>
+          <li>Åpne .csproj i Visual Studio</li>
+          <li>Få chatten i appen til å fungere!
+            <ul>
+              <li>Trenger en hub</li>
+              <li>Trenger mapping for hubben</li>
+              <li>Trenger klient-integrasjon</li>
+            </ul>
+          </li>
+          <li>Andre tips:
+            <ul>
+              <li>(Kan også gjøres i rammeverk-of-your-choice)</li>
+              <li>(Inkludert vanilla: <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-2.2&amp;tabs=visual-studio">Tutorial</a>)</li>
+              <li>Neste steg: cache meldinger?</li>
+              <li>Bruk fantasien, kanskje det finnes noen andre kule ting man kan streame?</li>
+            </ul>
+          </li>
+        </ol>
       </app-slide>
 
       <app-slide>
@@ -184,7 +228,7 @@
 
     </app-presenter>
     <app-progress :progress="progress"/>
-    <app-viewers/>
+    <app-viewers :style="{ opacity: progress > 0 ? 1 : 0 }"/>
   </div>
 </template>
 
@@ -206,6 +250,7 @@ import OutsideInvokation from '!!raw-loader!./examples/OutsideInvokation.cs';
 import TypedHub from '!!raw-loader!./examples/TypedHub.cs';
 import ITypedClient from '!!raw-loader!./examples/ITypedClient.cs';
 import LifecycleHub from '!!raw-loader!./examples/LifecycleHub.cs';
+import ClientGroupHub from '!!raw-loader!./examples/ClientGroupHub.cs';
 
 Vue.component('app-presenter', AppPresenter);
 
@@ -230,6 +275,7 @@ export default {
         TypedHub,
         ITypedClient,
         LifecycleHub,
+        ClientGroupHub,
       }
     };
   },
@@ -284,6 +330,10 @@ html, body {
   font-weight: 100;
   margin-top: .8em;
   display: block;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 .slide-left-enter-active, .slide-left-leave-active,

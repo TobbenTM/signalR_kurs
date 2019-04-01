@@ -6,4 +6,9 @@ public class ExampleController : Controller
     {
         _hubContext = hubContext;
     }
+
+    public async Task NotifyUsers()
+    {
+        await _hubContext.Clients.All.SendAsync("NotificationReceived");
+    }
 }

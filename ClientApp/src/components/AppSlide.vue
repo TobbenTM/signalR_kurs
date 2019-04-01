@@ -81,7 +81,7 @@ export default {
       padding: 2em;
     }
     
-    ul {
+    ul, ol {
       text-align: left;
       display: block;
     }

@@ -53,6 +53,8 @@ export default {
   top: 0;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 
   &__list {
     &__item {
