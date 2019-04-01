@@ -6,7 +6,7 @@
         <img src="./assets/swimlane-signalr-hub.svg" style="width: 25em;"/>
         <h1 class="signalr-title">SignalR</h1>
         <h4>Introduksjonskurs og workshop</h4>
-        <a href="http://signalr.nærd.no" style="width: 100%;">signalr.nærd.no</a>
+        <a href="https://signalr.nærd.no" style="width: 100%;">signalr.nærd.no</a>
         <a href="https://github.com/tobbentm/signalR_kurs">github.com/tobbentm/signalR_kurs</a>
       </app-slide>
 
