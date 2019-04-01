@@ -240,7 +240,7 @@ import AppProgress from './components/AppProgress';
 import AppViewers from './components/AppViewers';
 import AppSlide from './components/AppSlide';
 import CodeBlock from './components/CodeBlock';
-import ChatBox from './components/ChatBox';
+// import ChatBox from './components/ChatBox';
 
 import HubMapping from '!!raw-loader!./examples/HubMapping.cs';
 import PingPongHub from '!!raw-loader!hubs/PingPongHub.cs';
@@ -261,7 +261,7 @@ export default {
     AppProgress,
     AppViewers,
     CodeBlock,
-    ChatBox,
+    // ChatBox,
   },
   data() {
     return {
